@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;supermatter_delamination - JollyStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">JollyStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/supermatter_delamination.html#var">Var Details</a> - <a href="datum/supermatter_delamination.html#proc">Proc Details</a></header>
+<main>
+<h1>supermatter_delamination <aside>/<a href="datum.html">datum</a>/<a href="datum/supermatter_delamination.html">supermatter_delamination</a></aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L4">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 4"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/anomalies_to_spawn">anomalies_to_spawn</a></th><td>Base number of anomalies to spawn (can go up or down with a random small amount)</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/cascade_rift">cascade_rift</a></th><td>The rift in space that will be created by the cascade</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/should_spawn_anomalies">should_spawn_anomalies</a></th><td>Can we spawn anomalies after dealing with the delamination type?</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_cascade">supermatter_cascade</a></th><td>Are we triggering a supermatter cascade?</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_explosion_power">supermatter_explosion_power</a></th><td>Baseline strenght of the explosion caused by the SM</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_gas_amount">supermatter_gas_amount</a></th><td>Amount of total gases interacting with the SM</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_gasmix_power_ratio">supermatter_gasmix_power_ratio</a></th><td>Amount the gasmix will affect the explosion size</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_power">supermatter_power</a></th><td>Power amount of the SM at the moment of death</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#var/supermatter_turf">supermatter_turf</a></th><td>Reference to the supermatter turf</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/announce_beginning">announce_beginning</a></th><td>Announce detail about the event, as well as rift location</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/announce_gravitation_shift">announce_gravitation_shift</a></th><td>Announces the halfway point to the end.</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/announce_shuttle_gone">announce_shuttle_gone</a></th><td>This proc manipulates the shuttle if it's enroute to centcom, to remain in hyperspace. Otherwise, it just plays an announcement if
+the shuttle was in any other state except stranded (idle)</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/break_lights_on_station">break_lights_on_station</a></th><td>Break the lights on the station, have 35% of them be set to emergency</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/call_explosion">call_explosion</a></th><td>Spawns the explosion</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/call_singulo">call_singulo</a></th><td>Spawns the singularity</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/call_tesla">call_tesla</a></th><td>Spawns the tesla</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/create_cascade_ambience">create_cascade_ambience</a></th><td>Adds a bit of spiciness to the cascade by breaking lights and turning emergency maint access on</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/deleted_portal">deleted_portal</a></th><td>Logs the deletion of the bluespace rift, and starts countdown to the end of the round.</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/last_message">last_message</a></th><td>Announces the last message to the station, frees the shuttle from purgatory if applicable</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/pick_rift_location">pick_rift_location</a></th><td>Picks a random location for the rift
+Returns: ref to rift location</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/setup_anomalies">setup_anomalies</a></th><td>Setups how many anomalies to spawn</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/setup_delamination_type">setup_delamination_type</a></th><td>Setup for the types of possible delaminations and their effects (singulo, tesla or normal)</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/setup_mob_interaction">setup_mob_interaction</a></th><td>What the mobs should deal with when a delamination happens</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/spawn_anomalies">spawn_anomalies</a></th><td>Spawns the first half anomalies instantly and calls the second half</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/spawn_anomaly">spawn_anomaly</a></th><td>Callback for the anomalies to spawn after some time</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/spawn_overtime">spawn_overtime</a></th><td>Spawns the second half anomalies after a delay</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/start_supermatter_cascade">start_supermatter_cascade</a></th><td>Setup for the cascade delamination</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/the_end">the_end</a></th><td>Ends the round</td></tr>
+            <tr><th><a href="datum/supermatter_delamination.html#proc/warn_crew">warn_crew</a></th><td>Warns the crew about the cascade start and the rift location</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/anomalies_to_spawn"><aside class="declaration">var </aside>anomalies_to_spawn
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 10"/></a></h3>
+        <p>Base number of anomalies to spawn (can go up or down with a random small amount)</p><h3 id="var/cascade_rift"><aside class="declaration">var </aside>cascade_rift
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/cascade_portal.html">cascade_portal</a></aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 24"/></a></h3>
+        <p>The rift in space that will be created by the cascade</p><h3 id="var/should_spawn_anomalies"><aside class="declaration">var </aside>should_spawn_anomalies
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 12"/></a></h3>
+        <p>Can we spawn anomalies after dealing with the delamination type?</p><h3 id="var/supermatter_cascade"><aside class="declaration">var </aside>supermatter_cascade
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 20"/></a></h3>
+        <p>Are we triggering a supermatter cascade?</p><h3 id="var/supermatter_explosion_power"><aside class="declaration">var </aside>supermatter_explosion_power
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L16">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 16"/></a></h3>
+        <p>Baseline strenght of the explosion caused by the SM</p><h3 id="var/supermatter_gas_amount"><aside class="declaration">var </aside>supermatter_gas_amount
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 8"/></a></h3>
+        <p>Amount of total gases interacting with the SM</p><h3 id="var/supermatter_gasmix_power_ratio"><aside class="declaration">var </aside>supermatter_gasmix_power_ratio
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 18"/></a></h3>
+        <p>Amount the gasmix will affect the explosion size</p><h3 id="var/supermatter_power"><aside class="declaration">var </aside>supermatter_power
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 6"/></a></h3>
+        <p>Power amount of the SM at the moment of death</p><h3 id="var/supermatter_turf"><aside class="declaration">var </aside>supermatter_turf
+            <aside>&ndash; /<a href="turf.html">turf</a></aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 14"/></a></h3>
+        <p>Reference to the supermatter turf</p><h2 id="proc">Proc Details</h2><h3 id="proc/announce_beginning"><aside class="declaration">proc </aside>announce_beginning<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L324">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 324"/></a></aside>
+        </h3>
+        <p>Announce detail about the event, as well as rift location</p><h3 id="proc/announce_gravitation_shift"><aside class="declaration">proc </aside>announce_gravitation_shift<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L276">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 276"/></a></aside>
+        </h3>
+        <p>Announces the halfway point to the end.</p><h3 id="proc/announce_shuttle_gone"><aside class="declaration">proc </aside>announce_shuttle_gone<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L286">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 286"/></a></aside>
+        </h3>
+        <p>This proc manipulates the shuttle if it's enroute to centcom, to remain in hyperspace. Otherwise, it just plays an announcement if
+the shuttle was in any other state except stranded (idle)</p><h3 id="proc/break_lights_on_station"><aside class="declaration">proc </aside>break_lights_on_station<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L342">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 342"/></a></aside>
+        </h3>
+        <p>Break the lights on the station, have 35% of them be set to emergency</p><h3 id="proc/call_explosion"><aside class="declaration">proc </aside>call_explosion<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L114">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 114"/></a></aside>
+        </h3>
+        <p>Spawns the explosion</p><h3 id="proc/call_singulo"><aside class="declaration">proc </aside>call_singulo<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L92">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 92"/></a></aside>
+        </h3>
+        <p>Spawns the singularity</p><h3 id="proc/call_tesla"><aside class="declaration">proc </aside>call_tesla<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L104">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 104"/></a></aside>
+        </h3>
+        <p>Spawns the tesla</p><h3 id="proc/create_cascade_ambience"><aside class="declaration">proc </aside>create_cascade_ambience<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L225">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 225"/></a></aside>
+        </h3>
+        <p>Adds a bit of spiciness to the cascade by breaking lights and turning emergency maint access on</p><h3 id="proc/deleted_portal"><aside class="declaration">proc </aside>deleted_portal<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L260">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 260"/></a></aside>
+        </h3>
+        <p>Logs the deletion of the bluespace rift, and starts countdown to the end of the round.</p><h3 id="proc/last_message"><aside class="declaration">proc </aside>last_message<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L307">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 307"/></a></aside>
+        </h3>
+        <p>Announces the last message to the station, frees the shuttle from purgatory if applicable</p><h3 id="proc/pick_rift_location"><aside class="declaration">proc </aside>pick_rift_location<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L235">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 235"/></a></aside>
+        </h3>
+        <p>Picks a random location for the rift
+Returns: ref to rift location</p><h3 id="proc/setup_anomalies"><aside class="declaration">proc </aside>setup_anomalies<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L128">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 128"/></a></aside>
+        </h3>
+        <p>Setups how many anomalies to spawn</p><h3 id="proc/setup_delamination_type"><aside class="declaration">proc </aside>setup_delamination_type<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L79">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 79"/></a></aside>
+        </h3>
+        <p>Setup for the types of possible delaminations and their effects (singulo, tesla or normal)</p><h3 id="proc/setup_mob_interaction"><aside class="declaration">proc </aside>setup_mob_interaction<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L49">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 49"/></a></aside>
+        </h3>
+        <p>What the mobs should deal with when a delamination happens</p><h3 id="proc/spawn_anomalies"><aside class="declaration">proc </aside>spawn_anomalies<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L135">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 135"/></a></aside>
+        </h3>
+        <p>Spawns the first half anomalies instantly and calls the second half</p><h3 id="proc/spawn_anomaly"><aside class="declaration">proc </aside>spawn_anomaly<aside>(location, type) 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L169">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 169"/></a></aside>
+        </h3>
+        <p>Callback for the anomalies to spawn after some time</p><h3 id="proc/spawn_overtime"><aside class="declaration">proc </aside>spawn_overtime<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L150">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 150"/></a></aside>
+        </h3>
+        <p>Spawns the second half anomalies after a delay</p><h3 id="proc/start_supermatter_cascade"><aside class="declaration">proc </aside>start_supermatter_cascade<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L175">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 175"/></a></aside>
+        </h3>
+        <p>Setup for the cascade delamination</p><h3 id="proc/the_end"><aside class="declaration">proc </aside>the_end<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L335">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 335"/></a></aside>
+        </h3>
+        <p>Ends the round</p><h3 id="proc/warn_crew"><aside class="declaration">proc </aside>warn_crew<aside>() 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/power/supermatter/supermatter_delamination.dm#L248">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;power&#x2F;supermatter&#x2F;supermatter_delamination.dm 248"/></a></aside>
+        </h3>
+        <p>Warns the crew about the cascade start and the rift location</p></main>
+<footer>
+    jollystation.dme
+    <a href="https://github.com/JollyStation/JollyStation/tree/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5">6a6b2ae</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>

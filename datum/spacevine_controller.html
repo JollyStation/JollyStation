@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;spacevine_controller - JollyStation</title>
+</head>
+<body>
+<header>
+    <a href="index.html">JollyStation</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/spacevine_controller.html#var">Var Details</a> - <a href="datum/spacevine_controller.html#proc">Proc Details</a></header>
+<main>
+<h1>spacevine_controller <aside>/<a href="datum.html">datum</a>/<a href="datum/spacevine_controller.html">spacevine_controller</a></aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L514">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 514"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/growth_queue">growth_queue</a></th><td>Queue of vines to process</td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/max_mutation_severity">max_mutation_severity</a></th><td>Maximum sum of mutation severities</td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/minimum_spread_rate">minimum_spread_rate</a></th><td>Minimum spread rate per second</td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/spread_cap">spread_cap</a></th><td>Maximum spreading limit (ie. how many kudzu can there be) for this controller</td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/spread_multiplier">spread_multiplier</a></th><td>Spread multiplier, depends on productivity, affects how often kudzu spreads</td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#var/vines">vines</a></th><td>Canonical list of all the vines we &quot;own&quot;</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/spacevine_controller.html#proc/process">process</a></th><td>Life cycle of a space vine</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/growth_queue"><aside class="declaration">var </aside>growth_queue
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L518">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 518"/></a></h3>
+        <p>Queue of vines to process</p><h3 id="var/max_mutation_severity"><aside class="declaration">var </aside>max_mutation_severity
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L528">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 528"/></a></h3>
+        <p>Maximum sum of mutation severities</p><h3 id="var/minimum_spread_rate"><aside class="declaration">var </aside>minimum_spread_rate
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L530">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 530"/></a></h3>
+        <p>Minimum spread rate per second</p><h3 id="var/spread_cap"><aside class="declaration">var </aside>spread_cap
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L524">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 524"/></a></h3>
+        <p>Maximum spreading limit (ie. how many kudzu can there be) for this controller</p><h3 id="var/spread_multiplier"><aside class="declaration">var </aside>spread_multiplier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L522">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 522"/></a></h3>
+        <p>Spread multiplier, depends on productivity, affects how often kudzu spreads</p><h3 id="var/vines"><aside class="declaration">var </aside>vines
+            <aside>&ndash; /list/obj/structure/spacevine</aside>
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L516">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 516"/></a></h3>
+        <p>Canonical list of all the vines we &quot;own&quot;</p><h2 id="proc">Proc Details</h2><h3 id="proc/process"><aside class="parent"><a title="/datum" href="datum.html#proc/process">&uarr;</a></aside>process<aside>(delta_time) 
+        
+    
+            <a href="https://github.com/JollyStation/JollyStation/blob/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5/code/modules/events/spacevine.dm#L617">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;spacevine.dm 617"/></a></aside>
+        </h3>
+        <p>Life cycle of a space vine</p></main>
+<footer>
+    jollystation.dme
+    <a href="https://github.com/JollyStation/JollyStation/tree/6a6b2ae9721f9400c14a9ab0477b43fde8263fb5">6a6b2ae</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
